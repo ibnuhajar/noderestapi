@@ -5,5 +5,9 @@ const port = 3000
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
-app.get('/', (req, res) => res.send('Hello World!'))
+
+let routes = require('./routers/routerApp')
+routes(app)
+
+
 app.listen(port, () => console.log(`Example app listening on port port!`))
